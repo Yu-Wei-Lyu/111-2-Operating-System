@@ -7,6 +7,10 @@
 #include <fcntl.h>
 
 #define BUFF_MAX 4086
+#define FILE_IN "Source"
+#define FILE_OUT "Destination"
+
+int openFile(char value[], char type[]);
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
@@ -18,24 +22,29 @@ int main(int argc, char *argv[]) {
     int fd_dest;
     char buff[BUFF_MAX] = { 0 };
     
-    fd_source = open(argv[1], O_RDONLY);
-    if (fd_source == -1) {
-        printf("[Error] Source file does not exist\n");
-        return 1;
-    }
+    fd_source = openFile(argv[1], FILE_IN);
     read(fd_source, buff, BUFF_MAX);
     close(fd_source);
 
-    fd_dest = open(argv[2], O_TRUNC | O_WRONLY);
-    if (fd_dest == -1) {
-        printf("[Error] Destination file does not exist\n");
-        return 1;
-    }
-    
+    fd_dest = openFile(argv[2], FILE_OUT);
     write(fd_dest, buff, strlen(buff));
     close(fd_dest);
 
     printf("[Success] Copy file content.\n");
     
     return 0;
+}
+
+// Open file with error check
+int openFile(char value[], char type[]) {
+    int fd = -1;
+    if (strcmp(type, FILE_IN) == 0) {
+        fd = open(value, O_RDONLY);
+    } else if (strcmp(type, FILE_OUT) == 0) {
+        fd = open(value, O_TRUNC | O_WRONLY);
+    }
+    if (fd == -1) {
+        printf("[Error] %s file does not exist\n", type);
+        exit(1);
+    }
 }
