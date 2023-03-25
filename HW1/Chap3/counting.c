@@ -13,8 +13,7 @@ int main(int argc, char *argv[]) {
     }
 
     int num = atoi(argv[1]);
-    int exit_status;
-
+    
     if (num < 1) {
         printf("[Error] Number must be positive.\n");
         return 1;
