@@ -1,5 +1,6 @@
 #include <stdio.h> 
 #include <stdlib.h> 
+#include <unistd.h>
 #include <string.h> // memset 
 #include <pthread.h> // pthread_t, pthread_create, pthread_join 
 #include <semaphore.h> // sem_init, sem_wait, sem_post 
@@ -57,51 +58,48 @@ int main(){
 
 void* stu_behavior(void* stu_id) { 
     int id = *(int*)stu_id; 
-    printf("[-] %d 號學生從TA辦公室離開\n", id);
+    printf("[Init] %d 號學生到校\n", id);
     while(1) { 
-        rand_sleep(); 
+        sleep(rand() % SLEEP_MAX + 1); 
         pthread_mutex_lock(&mutex); 
         if (waiting_count < NUM_SEAT) { 
             chair[next_seat] = id; 
             waiting_count++; 
-            printf("[+] %d 號學生坐在外面等候\n", id); 
-            printf("[i] 等候席 : [1] %d [2] %d [3] %d\n", chair[0], chair[1], chair[2]); 
+            printf("[Stu] %d 號學生坐在外面等候\n", id); 
+            printf("[Stu] 等候席 : [1] %d [2] %d [3] %d\n", chair[0], chair[1], chair[2]); 
             next_seat = (next_seat + 1) % NUM_SEAT;
+            if (ta_awake == 0) {
+                ta_awake = 1; 
+                printf("[Event] TA 被 %d 號學生叫醒了\n", id);
+            }
             pthread_mutex_unlock(&mutex); 
             sem_post(&sem_stu); 
             sem_wait(&sem_ta); 
         } else { 
             pthread_mutex_unlock(&mutex); 
-            printf("[!] 座位已滿 : %d 號學生待會回來\n", id);	
+            printf("[Stu] 座位已滿 : %d 號學生待會回來\n", id);	
         } 
     }
 } 
 
 void* ta_behavior() { 
+    printf("[Init] TA 坐在實驗室中\n");
+    printf("[Event] 沒有學生等候 TA 休息片刻\n");
     while(1) { 
         sem_wait(&sem_stu);	
-        if (ta_awake == 0) {
-            ta_awake = 1; 
-            printf("[event] TA 被學生叫醒了\n");
-        }
         pthread_mutex_lock(&mutex);
         printf("[TA] 正在教導 %d 號學生\n", chair[next_teach]);
         chair[next_teach] = 0; 
         waiting_count--; 
         next_teach = (next_teach + 1) % NUM_SEAT; 
-        rand_sleep(); 
+        sleep(rand() % SLEEP_MAX + 1); 
         printf("[TA] 結束教導\n");
         printf("[TA] 走出辦公室查看等候席 : [1] %d [2] %d [3] %d\n", chair[0], chair[1], chair[2]);
         if (waiting_count == 0) {
             ta_awake = 0;
-            printf("[event] 沒有學生等候 TA 休息片刻\n");
+            printf("[Event] 沒有學生等候 TA 休息片刻\n");
         }
         pthread_mutex_unlock(&mutex); 
         sem_post(&sem_ta); 
     }
 } 
-
-void rand_sleep(void){ 
-    int time = rand() % SLEEP_MAX + 1; 
-    sleep(time); 
-}
