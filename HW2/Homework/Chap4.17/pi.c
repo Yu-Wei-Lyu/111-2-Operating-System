@@ -5,8 +5,8 @@
 #include <pthread.h>
 
 typedef struct {
-    unsigned long long int total;
-    unsigned long long int inCircle;
+    int total;
+    int inCircle;
 } points_t;
 
 void *pointAtCircle(void *arg) {
@@ -30,7 +30,7 @@ int main() {
     points_t points;
     memset(&points, 0, sizeof(points));
     printf("輸入隨機點數量 : ");
-    scanf("%llu", &points.total);
+    scanf("%d", &points.total);
     pthread_create(&thread, NULL, pointAtCircle, (void*) &points);
     pthread_join(thread, NULL);
     printf("pi = %f\n", 4 * (double)points.inCircle / points.total);

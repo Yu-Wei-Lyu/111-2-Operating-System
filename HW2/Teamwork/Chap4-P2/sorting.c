@@ -2,13 +2,10 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define SIZE 10
-
-int list[SIZE] = {5, 8, 9, 7, 3, 1, 12, 25, 36, 13};
-int result[SIZE];
+#define MAX_SIZE 2048
 
 typedef struct {
-    int *list;
+    int list[MAX_SIZE];
     int size;
 } sublist_t;
 
