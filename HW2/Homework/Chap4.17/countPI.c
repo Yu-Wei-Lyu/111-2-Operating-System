@@ -31,8 +31,12 @@ int main() {
     memset(&points, 0, sizeof(points));
     printf("輸入隨機點數量 : ");
     scanf("%d", &points.total);
+    double start, end;
+    start = clock();
     pthread_create(&thread, NULL, pointAtCircle, (void*) &points);
     pthread_join(thread, NULL);
     printf("pi = %f\n", 4 * (double)points.inCircle / points.total);
+    end = clock();
+    printf("總花費時間 : %f s\n", (end - start) / CLOCKS_PER_SEC );
     return 0;
 }
