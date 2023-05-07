@@ -1,0 +1,81 @@
+Enter available (4 numbers split with space): 15 10 8 12
+Enter maximum:
+	Proccess 0 maximum (4 numbers split with space):7 9 5 3
+	Proccess 1 maximum (4 numbers split with space):15 8 6 10
+Customer 0's request: 2 9 5 3 
+Customer 0's request granted.
+Customer 1's request: 8 3 2 5 
+Customer 1's request cannot be granted. Waiting...
+Customer 0's release resources.
+Customer 1's request granted.
+Customer 0's request: 6 9 0 0 
+Customer 0's request cannot be granted. Waiting...
+Customer 1's release resources.
+Customer 0's request granted.
+Customer 0's release resources.
+Customer 1's request: 0 6 4 4 
+Customer 1's request granted.
+Customer 0's request: 6 6 3 1 
+Customer 0's request cannot be granted. Waiting...
+Customer 1's release resources.
+Customer 0's request granted.
+Customer 0's release resources.
+Customer 1's request: 12 0 1 1 
+Customer 1's request granted.
+Customer 1's release resources.
+Customer 0's request: 0 7 1 3 
+Customer 0's request granted.
+Customer 0's release resources.
+Customer 1's request: 2 8 6 3 
+Customer 1's request granted.
+Customer 1's release resources.
+Customer 0's request: 7 1 4 0 
+Customer 0's request granted.
+Customer 0's release resources.
+Customer 0's request: 6 0 1 3 
+Customer 0's request granted.
+Customer 1's request: 12 5 2 3 
+Customer 1's request cannot be granted. Waiting...
+Customer 0's release resources.
+Customer 1's request granted.
+Customer 0's request: 3 1 2 2 
+Customer 0's request cannot be granted. Waiting...
+Customer 1's release resources.
+Customer 0's request granted.
+Customer 0's release resources.
+Customer 0's request: 5 6 3 2 
+Customer 0's request granted.
+Customer 1's request: 8 1 4 8 
+Customer 1's request cannot be granted. Waiting...
+Customer 0's release resources.
+Customer 1's request granted.
+Customer 0's request: 7 9 0 3 
+Customer 0's request cannot be granted. Waiting...
+Customer 1's release resources.
+Customer 0's request granted.
+Customer 0's release resources.
+Customer 1's request: 14 8 6 2 
+Customer 1's request granted.
+Customer 0's request: 7 8 2 1 
+Customer 0's request cannot be granted. Waiting...
+Customer 1's release resources.
+Customer 0's request granted.
+Customer 1's request: 15 7 5 8 
+Customer 1's request cannot be granted. Waiting...
+Customer 0's release resources.
+Customer 1's request granted.
+Customer 1's release resources.
+Customer 0's request: 1 1 2 2 
+Customer 0's request granted.
+Customer 0's release resources.
+Customer 1's request: 13 7 1 7 
+Customer 1's request granted.
+Customer 1's release resources.
+Customer 0's request: 6 8 1 2 
+Customer 0's request granted.
+Customer 1's request: 12 8 0 0 
+Customer 1's request cannot be granted. Waiting...
+Customer 0's release resources.
+Customer 1's request granted.
+Customer 1's release resources.
+...
