@@ -1,0 +1,62 @@
+Farmer A is awake.
+Farmer B is awake.
+Farmer D is awake.
+Farmer C is awake.
+[Northbound] Farmer A is passing.
+[Northbound] Farmer B is passing.
+[Northbound] Farmer B has passed.
+[Waiting from south] Farmer D is waiting.
+[Northbound] Farmer A has passed.
+[Southbound] Farmer D is passing.
+[Waiting from north] Farmer B is waiting.
+[Southbound] Farmer C is passing.
+[Southbound] Farmer C has passed.
+[Southbound] Farmer D has passed.
+[Northbound] Farmer B is passing.
+[Northbound] Farmer A is passing.
+[Northbound] Farmer A has passed.
+[Waiting from south] Farmer D is waiting.
+[Northbound] Farmer B has passed.
+[Southbound] Farmer D is passing.
+[Southbound] Farmer C is passing.
+[Waiting from north] Farmer A is waiting.
+[Southbound] Farmer D has passed.
+[Waiting from north] Farmer B is waiting.
+[Southbound] Farmer C has passed.
+[Northbound] Farmer B is passing.
+[Northbound] Farmer A is passing.
+[Northbound] Farmer B has passed.
+[Waiting from south] Farmer D is waiting.
+[Waiting from south] Farmer C is waiting.
+[Northbound] Farmer A has passed.
+[Southbound] Farmer C is passing.
+[Southbound] Farmer D is passing.
+[Waiting from north] Farmer A is waiting.
+[Southbound] Farmer D has passed.
+[Southbound] Farmer C has passed.
+[Northbound] Farmer A is passing.
+[Northbound] Farmer B is passing.
+[Waiting from south] Farmer D is waiting.
+[Northbound] Farmer A has passed.
+[Northbound] Farmer B has passed.
+[Southbound] Farmer D is passing.
+[Southbound] Farmer D has passed.
+[Northbound] Farmer B is passing.
+[Waiting from south] Farmer C is waiting.
+[Northbound] Farmer A is passing.
+[Northbound] Farmer B has passed.
+[Northbound] Farmer A has passed.
+[Southbound] Farmer C is passing.
+[Southbound] Farmer D is passing.
+[Waiting from north] Farmer A is waiting.
+[Waiting from north] Farmer B is waiting.
+[Southbound] Farmer C has passed.
+[Southbound] Farmer C is passing.
+[Southbound] Farmer D has passed.
+[Southbound] Farmer D is passing.
+[Southbound] Farmer D has passed.
+[Southbound] Farmer C has passed.
+[Northbound] Farmer B is passing.
+[Northbound] Farmer A is passing.
+[Northbound] Farmer A has passed.
+[Northbound] Farmer B has passed.
