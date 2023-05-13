@@ -1,0 +1,175 @@
+page reference string : 7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1
+=== FIFO algorithm ===
+Request 7
+page fault!
+current frame:7     
+Request 0
+page fault!
+current frame:7 0   
+Request 1
+page fault!
+current frame:7 0 1 
+Request 2
+page fault!
+current frame:2 0 1 
+Request 0
+Memory resident.
+Request 3
+page fault!
+current frame:2 3 1 
+Request 0
+page fault!
+current frame:2 3 0 
+Request 4
+page fault!
+current frame:4 3 0 
+Request 2
+page fault!
+current frame:4 2 0 
+Request 3
+page fault!
+current frame:4 2 3 
+Request 0
+page fault!
+current frame:0 2 3 
+Request 3
+Memory resident.
+Request 0
+Memory resident.
+Request 3
+Memory resident.
+Request 2
+Memory resident.
+Request 1
+page fault!
+current frame:0 1 3 
+Request 2
+page fault!
+current frame:0 1 2 
+Request 0
+Memory resident.
+Request 1
+Memory resident.
+Request 7
+page fault!
+current frame:7 1 2 
+Request 0
+page fault!
+current frame:7 0 2 
+Request 1
+page fault!
+current frame:7 0 1 
+FIFO algorithm with 3 frames, page fault = 15
+=== Optimal algorithm ===
+Request 7
+page fault!
+current frame:7     
+Request 0
+page fault!
+current frame:7 0   
+Request 1
+page fault!
+current frame:7 0 1 
+Request 2
+page fault!
+current frame:2 0 1 
+Request 0
+Memory resident.
+Request 3
+page fault!
+current frame:2 0 3 
+Request 0
+Memory resident.
+Request 4
+page fault!
+current frame:2 4 3 
+Request 2
+Memory resident.
+Request 3
+Memory resident.
+Request 0
+page fault!
+current frame:2 0 3 
+Request 3
+Memory resident.
+Request 0
+Memory resident.
+Request 3
+Memory resident.
+Request 2
+Memory resident.
+Request 1
+page fault!
+current frame:2 0 1 
+Request 2
+Memory resident.
+Request 0
+Memory resident.
+Request 1
+Memory resident.
+Request 7
+page fault!
+current frame:7 0 1 
+Request 0
+Memory resident.
+Request 1
+Memory resident.
+Optimal algorithm with 3 frames, page fault = 9
+=== LRU algorithm ===
+Request 7
+page fault!
+current frame:7     
+Request 0
+page fault!
+current frame:7 0   
+Request 1
+page fault!
+current frame:7 0 1 
+Request 2
+page fault!
+current frame:2 0 1 
+Request 0
+Memory resident.
+Request 3
+page fault!
+current frame:2 0 3 
+Request 0
+Memory resident.
+Request 4
+page fault!
+current frame:4 0 3 
+Request 2
+page fault!
+current frame:4 0 2 
+Request 3
+page fault!
+current frame:4 3 2 
+Request 0
+page fault!
+current frame:0 3 2 
+Request 3
+Memory resident.
+Request 0
+Memory resident.
+Request 3
+Memory resident.
+Request 2
+Memory resident.
+Request 1
+page fault!
+current frame:1 3 2 
+Request 2
+Memory resident.
+Request 0
+page fault!
+current frame:1 0 2 
+Request 1
+Memory resident.
+Request 7
+page fault!
+current frame:1 0 7 
+Request 0
+Memory resident.
+Request 1
+Memory resident.
+LRU algorithm with 3 frames, page fault = 12
