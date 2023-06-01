@@ -1,0 +1,2 @@
+gcc -o disk_scheduling disk_scheduling.c
+./disk_scheduling 2150 2069 1212 2296 2800 544 1618 356 1523 4965 3681
